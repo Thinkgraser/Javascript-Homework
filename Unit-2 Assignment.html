@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types Assignment</title>
+
+<style>
+
+body {background-color:#FC6;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-2 - Variables Assignment</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment.</p>
+<p>Submt this assignment on Blackboard. Please include a link to your homework page.</p>
+<h3>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</h3>
+<hr />
+<p>1. Define a String variable called schoolName and assign it a value of DMACC. Use the keyword const for this variable. Use document.write() to display the value of the variable within an h2 element.</p>
+<p>2. Define a String variable called courseName and assign it a value of WDV221 Intro Javascript. Use document.write() to display the value of the variable within the following paragraph.
+</p>
+	<p>Hello! Welcome to courseName.</p>
+<p>3. Define a Numeric variable called testScore and assign it a value of 100.00. Use console.log() to display the value of the variable. </p>
+<p>4. Define a Numeric variable called courseGrade. Do not give it a value. Use console.log() to display the value of the variable. </p>
+<p>5. Define a Boolean variable called courseCompleted. Give it a value of false. Use an alert() to display the value of the variable.</p>
+<script>
+	//1 It is making a constnat variable with a value of DMACC and then printing the constant variable within an h2 element.
+	const schoolName = "DMACC";
+	document.write("<h2>" + schoolName + "</h2>");
+	//2 It is making a variable with the value WDV221 and printing the variable withing a paragraph element.
+	let courseName = "WDV221";
+	document.write("<p>Hello! Welcome to " + courseName + ". </p>");
+	//3 It is making a variable with the value 100.00 and logging the value in the console.
+	let testScore = 100.00;
+	console.log(testScore);
+	//4 It is making a variable without a value and logging it in the console so the console logs it as undefined.
+	let courseGrade;
+	console.log(courseGrade);
+	//5 It is making a variable with the value false and using an alert to display it to the user.
+	let courseCompleted = false;
+	alert(courseCompleted);
+</script>
+</body>
+</html>
