@@ -47,7 +47,7 @@ div#container	{
 
 	function displayEmailName() {
 		
-		var atSymbol = studentEmail.indexOf("@");		//local variable that will store the location of the @ symbol
+		var atSymbol = studentEmail.search("@");		//local variable that will store the location of the @ symbol
 		var emailNameOnly = studentEmail.substr(0,atSymbol);	//local variable that will store the value of the name portion of the email address
 		
 		
@@ -55,8 +55,8 @@ div#container	{
 		
 	}
   function displayEmailServer(){
-    var atSymbol = studentEmail.indexOf("@");
-    var emailServer = studentEmail.slice(atSymbol + 1);
+    let atSymbol = studentEmail.search("@");
+    let emailServer = studentEmail.slice(atSymbol + 1);
 
     alert("Email Server: " + emailServer);
   }
