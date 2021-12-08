@@ -1,0 +1,121 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Skill Test Form Calculations</title>
+	<style>
+		.error{
+			color: red;
+			font-style: italic;
+		}
+	
+		form {
+			width:500px;
+			border: thin solid blue;
+		}
+		
+		form h3 {
+			text-align: center;
+		}
+	
+	
+	</style>
+	<script>
+		let totalSalesOutput = 0;
+		let currencyFormat = new Intl.NumberFormat('en-us',{
+			style: 'currency',
+			currency: 'USD'
+		});
+		function submitOrder(){
+			document.querySelector('#quantityError').textContent = "";
+			document.querySelector('#productError').textContent = "";
+			let product = document.querySelector('#products');
+			let productName = product.options[product.selectedIndex].text;
+			let productValue = product.options[product.selectedIndex].value;
+			let productCost = parseFloat(productValue);
+			let quantity = parseInt(document.querySelector('#textfield2').value.trim());
+
+			if(isNaN(quantity) || quantity==='' || quantity < 0){
+				document.querySelector('#quantityError').textContent = "Please enter a quantity!";
+				
+				if(productValue == ''){
+				document.querySelector('#productError').textContent = "Please select a product!";
+			}
+			}
+			else if(productValue == ''){
+				document.querySelector('#productError').textContent = "Please select a product!";
+			}
+			else{
+				let outputSalePrice = quantity * productCost;
+				totalSalesOutput += outputSalePrice;
+				document.querySelector('#salePrice').textContent = currencyFormat.format(outputSalePrice);
+				document.querySelector('#totalSales').textContent = currencyFormat.format(totalSalesOutput);
+			}
+		}
+		function resetForm(){
+			let products = document.querySelector('#products');
+			products.selectedIndex = 0;
+			let textfield2 = document.querySelector('#textfield2');
+			textfield2.value = "";
+			let salesPrice = document.querySelector('#salePrice');
+			salesPrice.textContent = "";
+			document.querySelector('#quantityError').textContent = "";
+			document.querySelector('#productError').textContent = "";
+		}
+		function resetOrder(){
+			resetForm();
+			let totalSales = document.querySelector('#totalSales');
+			totalSales.textContent = "";
+			totalSales = 0;
+		}
+
+
+
+
+	</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Form Calculations</h2>
+<form id="form1" name="form1" method="post" action="#">
+	<h3>Purchase Orders</h3>
+	<p>
+		<label for="products">Products available to Purchase</label>
+		<select name="products" id="products">
+			<option value="">Select a Product</option>
+			<option value="1.99">Pen</option>
+			<option value="0.49">Pencil</option>
+			<option value="5.99">Red Stapler</option>
+		</select>
+		<span class = "error" id="productError"></span>
+	</p>
+	<p>
+		<label for="">Number purchased</label>
+		<input type="text" name="textfield2" id="textfield2" />
+		<span class = "error" id="quantityError"></span>
+	</p>
+
+	<p>
+		<input type="button" name="submit" id="button" value="Submit Order" onclick="submitOrder()"/>
+		<input type="button" name="reset" id="button2" value="Reset" onclick="resetForm()"/>
+		<input type="button" name="clearOrder" id="button3" value="Clear Order" onclick="resetOrder()"/>
+	</p>
+</form>
+
+	<p>Sale Price for this purchase: <span id="salePrice"></span></p>
+	
+	<p>Total Sales for all purchases: <span id="totalSales"></span></p>
+
+<h3>Instructions: Modify this page so that the form works as described.</h3>
+<ul>
+  <li>The customer will select the product and the product price using the drop down list.</li>
+  <li>The Number Purchased field should be a number and should only allow whole numbers.</li>
+  <li>When the customer submits the order, calculate the Sale Price (product price * number purchased) and display it on the Sale Price line.</li>
+  <li>When the customer submits the order, the form will add the 'salePrice' to the Total Sales value and display the new value on the Total Purchases line. </li>
+  <li>All dollar amounts should be formatted as US currency.</li>
+  <li>The Reset button should clear the form fields and the 'salePrice' field.</li>
+  <li>The Clear Order button should clear the form fields, the 'salePrice', the 'totalSales' and start a new Total Sales.</li>
+</ul>
+<p>&nbsp;</p>
+</body>
+</html>
