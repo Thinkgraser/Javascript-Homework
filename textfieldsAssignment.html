@@ -45,7 +45,9 @@ function increaseCount(){
   count++;
   document.getElementById("result5").value = count;
 }
-
+function resetCount(){
+count = 0;
+}
 
 </script>
 
@@ -95,7 +97,7 @@ function increaseCount(){
   <input type="text" id="result5"/>
   </p>
   <p>
-    <input type="reset" name="Reset" id="button" value="Reset">
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="resetCount()">
   </p>
 </form>
 <p>&nbsp;</p>
