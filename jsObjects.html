@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let bookTitles = ["Beginning Javascript", "Logic with ES6", "Javascript Ojbects Made Easy"];
+        let bookPrices = [19.99, 29.49, 999.99];
+        let bookAuthor = ["Smith", "Johson-Parker", "Westin" ];
+
+        let book1 = {
+            bookName: bookTitles[0],
+            bookPrice: bookPrices[0],
+            bookAuthor: bookAuthor[0],
+            studentDiscountPrice: function() {
+                return Intl.NumberFormat('en-us',{
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(this.bookPrice * .8);
+            }
+        }
+        let book2 = {
+            bookName: bookTitles[1],
+            bookPrice: bookPrices[1],
+            bookAuthor: bookAuthor[1],
+            studentDiscountPrice: function() {
+                return Intl.NumberFormat('en-us',{
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(this.bookPrice * .8);
+            }
+        }
+        let book3 = {
+            bookName: bookTitles[2],
+            bookPrice: bookPrices[2],
+            bookAuthor: bookAuthor[2],
+            studentDiscountPrice: function() {
+                return Intl.NumberFormat('en-us',{
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(this.bookPrice * .8);
+            }
+        }
+        let javascriptBooks = [book1, book2, book3];
+    </script>
+</head>
+<body>
+    <h1>Displaying books using book objects</h1>
+  <script>
+      document.write("<p>Title: " + book1.bookName + "</p>" + "<p>Author: " + book1.bookAuthor + "</p>" + "<p>Price: $" + book1.bookPrice + "</p>" + "<p>Discounted Price: " + book1.studentDiscountPrice() + "</p></br>") 
+      document.write("<p>Title: " + book2.bookName + "</p>" + "<p>Author: " + book2.bookAuthor + "</p>" + "<p>Price: $" + book2.bookPrice + "</p>" + "<p>Discounted Price: " + book2.studentDiscountPrice() + "</p></br>") 
+      document.write("<p>Title: " + book3.bookName + "</p>" + "<p>Author: " + book3.bookAuthor + "</p>" + "<p>Price: $" + book3.bookPrice + "</p>" + "<p>Discounted Price: " + book3.studentDiscountPrice() + "</p></br>") 
+
+
+  </script>
+    <h1>Displaying books from array using loop</h1>
+    <script>
+    for (let index = 0; index < javascriptBooks.length; index++) {
+            document.write("<p>Title: " + javascriptBooks[index].bookName + "</p>" + "<p>Author: " + javascriptBooks[index].bookAuthor + "</p>" + "<p>Price: $" + javascriptBooks[index].bookPrice + "</p>" + "<p>Discounted Price: " + javascriptBooks[index].studentDiscountPrice() + "</p></br>") 
+    }
+    </script>
+</body>
+</html>
