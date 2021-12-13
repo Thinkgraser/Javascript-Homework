@@ -1,0 +1,80 @@
+<html>
+
+	<head>
+		<title>WDV221 Intro Javascript</title>
+		<script type="text/javascript" src="productArrays.js"></script>  
+		<script>
+			let productList = [];
+			let currencyFormat = Intl.NumberFormat('en-us',{style:'currency',currency:'USD'});
+
+			for (let index = 0; index < productNames.length; index++) {
+				productList[index] = {prod_name : productNames[index],
+				prod_number: productNumbers[index],
+				prod_manufacture_price: productManPrices[index],
+				prod_suggestedRetailPrice: function(){console.log(currencyFormat.format(this.prod_manufacture_price * 1.67)); 
+					return currencyFormat.format(this.prod_manufacture_price * 1.67)}}
+				
+			}
+			/*			
+			Product objects have the following properties and methods
+				prod_name
+				prod_number
+				prod_manufacture_price
+				prod_suggestedRetailPrice( )	
+					this function will create the suggest retail price of the object
+					to calculate take manufacture_price times 1.67
+			*/
+			
+		</script>
+	
+	</head>
+	
+	<body>
+		<h1>WDV221 Intro Javascript</h1>
+		<h2>Skill Test - Create and Display Javascript Objects</h2>
+		
+		<h3>Product Inventory List</h3>
+		<div>
+			<p>EXAMPLE OUTPUT</p>
+			<p>Number of Products in Product List: 1</p>
+			<p>
+				Product: Standard Keyboard</br>
+				Product Number: std-key<br>
+				Product Wholesale Price: $11.90</br>
+				Product Suggested Retail Price: $19.87</br>
+			</p>
+			<p>PROJECT OUTPUT</p>
+			<p>Number of Products in Product List: <script>document.write(productList.length)</script></p>
+			<script>
+
+				for (let index = 0; index < productList.length; index++) {
+					document.write("Product: " + productList[index].prod_name + "</br>Product Number: " + productList[index].prod_number + "</br>Product Wholesale Price: " +currencyFormat.format(productList[index].prod_manufacture_price) + "</br>Product Suggested Retail Price: " + productList[index].prod_suggestedRetailPrice() +"</br></br>")
+				}
+
+
+			</script>
+		
+		
+		</div>
+		<h3>Instructions</h3>
+		<ol>
+			<li>Attach the external script file as the source for your data</li>
+			<li>Using the data provided in the external script file create an array of objects called productList using the object format in the script</li>
+			<li>Use a loop to display the contents of the productList on the page beginning after the Example Output</li>
+			<li>All prices should be displayed as USD formatted currency</li>
+		</ol>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
