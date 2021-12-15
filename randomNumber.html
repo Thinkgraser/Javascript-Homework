@@ -9,13 +9,14 @@
 <body>
     <script>
         function randomNumber(){
-            return Math.round(Math.random()*(10-1) + 1)
+            document.getElementById("random").innerHTML = Math.round(Math.random()*(10-1) + 1)
         }
     </script>
     
     <label>
-    <input type="submit" name="button" id="button" value="Submit" onclick= "document.write(randomNumber())"/>
+    <input type="submit" name="button" id="button" value="Submit" onclick= "randomNumber()"/>
     </label>
+    <p id = "random"></p>
 
 
 </body>
