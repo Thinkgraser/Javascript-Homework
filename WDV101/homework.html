@@ -35,12 +35,36 @@ nav ul{
     margin: 0;
     list-style: none;
 }
+nav ul ul {
+  display: none;
+}
+
+nav ul li:hover>ul {
+  display: inherit;
+}
+nav ul ul li {
+  width: auto;
+  Height: 40px;
+  float: none;
+  display: list-item;
+  position: relative;
+  Line-height: 11.5px;
+  Text-align: center;
+}
+nav ul ul {
+  position: absolute;
+  width: 100%;
+}
     </style>
 </head>
 <body>
      <nav>
         <ul>
-            <li><a>Unit 1</a></li>
+            <li><a>Unit 1</a>
+            <ul>
+                <li><a href="https://colbywemerdmacc.netlify.app/">Index Page</a></li>
+                </ul>
+            </li>
             <li><a>Unit 2</a></li>
         </ul>
          </nav> 
