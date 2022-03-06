@@ -1,0 +1,59 @@
+nav li, nav a{
+    text-decoration: none;
+    display: inline;
+    color: black;
+    margin: 5px;
+    padding: 5px;
+    background-color: aqua;
+    
+}
+nav a:hover{
+    background-color: green;
+}
+body{
+    background-color: #ffe4c4;
+}
+h1{
+    color: aqua;
+    background-color: darkgoldenrod;
+    font-family: 'acmeregular';
+    
+}
+h1,h2,h3{
+    text-align: center;
+}
+p{
+    color: rgba(255, 255, 255, 1);
+    font-family: Tahoma, Geneva, sans-serif;
+}
+a :visited{
+    color: aquamarine;
+}
+.Koala{
+    font-size: x-large;
+}
+#save{
+    font-size: xx-large;
+}
+.list{
+    list-style-image: url("images/leaf.gif");
+}
+#koala{
+    float: right;
+    margin: 20px;
+}
+h3{
+    text-shadow: 0 0 3px #FF0000
+}
+@font-face {
+    font-family: 'acmeregular';
+    src: url('Acme-Regular-webfont.eot');
+    src: url('Acme-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Acme-Regular-webfont.woff2') format('woff2'),
+         url('Acme-Regular-webfont.woff') format('woff'),
+         url('Acme-Regular-webfont.ttf') format('truetype'),
+         url('Acme-Regular-webfont.svg#acmeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
