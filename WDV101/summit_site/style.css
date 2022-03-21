@@ -1,0 +1,44 @@
+body{
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav ul li{
+    Width: 25%;
+    line-height: 32px;
+    Text-align: center;
+    float: left;
+}
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+  nav a:hover{
+      background-color: green;
+  }
+  nav a{
+      padding: 14.75px 20px;
+      display: block;
+      text-decoration: none;
+      font-size: 17px;
+      background: rgba(0, 0, 0, .5);
+      color: white;
+      text-transform: uppercase;
+  }
+  div{
+    display : block; 
+    margin : 8px;
+  }
+  #intro::first-letter{
+    font-size: 200%;
+  }
+  h1,h2,h3,h4{
+    font-family: 'Red Hat Mono', monospace;
+  }
+  p{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Red+Hat+Mono:wght@300&display=swap');
